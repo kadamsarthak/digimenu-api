@@ -20,7 +20,8 @@ app.use((req,res,next) => {
 app.use(bodyparser.json());
 const allowed = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173').split(',');
 app.use(cors({
-  origin: ['https://digimenusk.netlify.app'],
+  origin: ["http://localhost:5173", "https://your-netlify-site.netlify.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
